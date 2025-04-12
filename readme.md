@@ -38,6 +38,7 @@ Chrome 智能翻译助手是一个优雅、高效的浏览器翻译插件，为�
 
 ### 项目结构
 
+```bash
 src/
 ├── components/ # React 组件
 ├── hooks/ # 自定义 Hooks
@@ -46,6 +47,7 @@ src/
 ├── types/ # TypeScript 类型定义
 ├── utils/ # 工具函数
 └── manifest.json # 插件配置文件
+```
 
 ### 开发规范
 
