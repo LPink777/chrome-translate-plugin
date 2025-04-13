@@ -4,6 +4,11 @@
 
 Chrome 智能翻译助手是一个优雅、高效的浏览器翻译插件，为用户提供即时的中英文翻译服务。该插件采用现代化的技术栈和用户界面设计，让翻译体验更加流畅和便捷。
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/LPink777/chrome-translate-plugin/build-and-publish.yml?branch=main)
+![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/YOUR_EXTENSION_ID)
+![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/YOUR_EXTENSION_ID)
+![GitHub](https://img.shields.io/github/license/LPink777/chrome-translate-plugin)
+
 ## 核心功能
 
 ### 1. 双面板翻译界面
@@ -60,26 +65,42 @@ src/
 
 ## 构建与发布
 
-### 构建流程
+### 本地开发
+```bash
+# 安装依赖
+npm install
 
-1. 开发环境构建
+# 开发模式
+npm run dev
 
-   ```bash
-   npm run dev
-   ```
+# 代码检查
+npm run lint        # 检查 JS/TS 代码
+npm run lint:style  # 检查样式代码
+npm run lint:fix    # 自动修复所有可修复的问题
 
-2. 生产环境构建
-   ```bash
-   npm run build
-   ```
+# 代码格式化
+npm run format
 
-### 发布要求
+# 构建生产版本
+npm run build
+```
 
-- 符合 Chrome Web Store 发布规范
-- 完整的插件描述和使用说明
-- 清晰的功能截图
-- 隐私政策说明
-- 用户数据处理说明
+### 自动构建与发布
+
+本项目使用 GitHub Actions 实现自动构建和发布：
+
+1. **自动构建**：
+   - 每次推送到 main 分支
+   - 每个 Pull Request
+   - 每次发布新标签（tag）
+
+2. **自动发布**：
+   - 创建新的发布标签（如 v1.0.0）时触发
+   - 自动构建并打包
+   - 自动发布到 Chrome Web Store
+   - 自动创建 GitHub Release
+
+详细的发布流程和配置说明请参考：[Chrome Store 发布指南](docs/CHROME_STORE_PUBLISH.md)
 
 ## 性能指标
 
@@ -115,3 +136,10 @@ MIT License
 ## 贡献指南
 
 欢迎提交 Issue 和 Pull Request，一起改进这个翻译插件！
+
+提交代码时请遵循：
+1. 使用 `npm run commit` 提交代码
+2. 遵循 [约定式提交](https://www.conventionalcommits.org/zh-hans/) 规范
+3. 确保通过所有代码检查
+4. 编写必要的测试用例
+5. 更新相关文档
